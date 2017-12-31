@@ -1,3 +1,22 @@
 body {
+    margin: 0;
+    text-transform: uppercase;
+}
+.flex-container {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-between;
+}
+.flex-container>* {
+    flex: 0 1 100vw;
+    border: dashed 1px grey;
     text-align: center;
+}
+header h1 {
+    font-size: 5em;
+}
+a {
+    text-decoration: none;
 }
