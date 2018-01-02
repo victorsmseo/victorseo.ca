@@ -15,6 +15,15 @@ body {
     border: dashed 1px grey;
     text-align: center;
 }
+.flex-nav {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+.flex-nav>* {
+    border: dashed 1px grey;
+}
 h1 {
     font-size: 5em;
     font-weight: 200;
