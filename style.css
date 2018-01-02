@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     text-transform: uppercase;
 }
 .flex-container {
@@ -14,8 +15,12 @@ body {
     border: dashed 1px grey;
     text-align: center;
 }
-header h1 {
+h1 {
     font-size: 5em;
+    font-weight: 200;
+}
+h2 {
+    font-weight: 400;
 }
 a {
     text-decoration: none;
