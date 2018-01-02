@@ -24,6 +24,10 @@ body {
 .flex-nav>* {
     border: dashed 1px grey;
 }
+main h2 {
+    /* font-size: 3em;
+    font-weight: 300; */
+}
 h1 {
     font-size: 5em;
     font-weight: 200;
