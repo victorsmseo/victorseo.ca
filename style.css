@@ -2,6 +2,12 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     text-transform: uppercase;
+    /* background-color: rgb(23, 26, 211); */
+    color: rgb(107, 118, 182);
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
 }
 .flex-container {
     min-height: 100vh;
@@ -12,8 +18,10 @@ body {
 }
 .flex-container>* {
     flex: 0 1 100vw;
-    border: dashed 1px grey;
-    text-align: center;
+    /* border: dashed 1px grey; */
+}
+header {
+    margin-left: 60px;
 }
 .flex-nav {
     display: flex;
@@ -33,6 +41,16 @@ h2 {
 }
 a {
     text-decoration: none;
+}
+a:link,
+a:visited {
+    color: white;
+}
+a:hover {
+    color: grey;
+}
+a:active {
+    color: darkgray;
 }
 .title {
     font-size: 3em;

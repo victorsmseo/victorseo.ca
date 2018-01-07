@@ -28,11 +28,11 @@
             window.onload = init;
             function init() {
                 canvas = document.getElementById("canvas");
+                ctx = canvas.getContext('2d');
                 drawRectangle();
+                drawText();
             }
             function drawRectangle() {
-                ctx = canvas.getContext('2d');
-
                 ctx.fillStyle = 'red';
                 ctx.fillRect(10, 10, 100, 100);
 
@@ -46,7 +46,8 @@
                 ctx.strokeStyle = 'orange';
                 ctx.lineWidth = 5;
                 ctx.strokeRect(340, 10, 100, 100);
-
+            }
+            function drawText() {
                 ctx.font = 'italic 20pt Monospace';
 
                 ctx.fillStyle = 'blue';
