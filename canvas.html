@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Victor Seo</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var canvas, ctx;
+        window.onload = init;
+        function init() {
+            canvas = document.getElementById("canvas");
+            drawRectangle();
+        }
+        function drawRectangle() {
+            ctx = canvas.getContext('2d');
+            ctx.fillRect(30,20,80,100);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <header>
+            <h1>
+                <a href="index.html">Victor Seo</a>
+            </h1>
+            <h2 class="title">Canvas</h2>
+        </header>
+        <main>
+            <canvas id="canvas" height="300" width="800">
+                Fallback content that will be displayed in case the web browser does not support the canvas tag or in case scripting is disabled.
+            </canvas>
+        </main>
+        <footer>
+            <p>&copy; 2018</p>
+        </footer>
+    </div>
+</body>
+
+</html>

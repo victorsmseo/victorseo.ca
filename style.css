@@ -39,3 +39,7 @@ a {
     font-weight: 300;
     margin-top: 100px;
 }
+#canvas {
+    margin-top: 3px;
+    border: solid 1px grey;
+}
