@@ -2,8 +2,7 @@ body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     text-transform: uppercase;
-    /* background-color: rgb(23, 26, 211); */
-    color: rgb(107, 118, 182);
+    color: #d0e1f9;
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,41 +12,59 @@ body {
     min-height: 100vh;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-content: space-between;
+    /* justify-content: center; */
+    /* align-content: space-between; */
 }
 .flex-container>* {
-    flex: 0 1 100vw;
+    /* flex: 0 1 50vw; */
     /* border: dashed 1px grey; */
 }
 header {
-    margin-left: 60px;
+    flex: 0 1 50vw;
+}
+header h1 {
+    margin-left: 40px;
+}
+main {
+    /* height: 99vh; */
+    flex: 0 1 40vw;
+    align-self: center;
+}
+footer {
+    text-align: center;
+    flex: 0 1 100vw;
 }
 .flex-nav {
     display: flex;
     flex-flow: row wrap;
-    align-content: stretch;
-    justify-content: space-evenly;
+    font-weight: 100;
+    font-size: 2em;
+    /* align-content: stretch; */
+    /* align-items: center; */
+    /* justify-content: flex; */
 }
 .flex-nav>* {
     border: dashed 1px grey;
+    flex: 0 1 19.8vw;
+    /* padding-top: 41vh; */
 }
 h1 {
-    font-size: 5em;
+    font-size: 3em;
     font-weight: 200;
 }
 h2 {
     font-weight: 400;
+    /* padding: 50px; */
 }
 a {
     text-decoration: none;
 }
 a:link,
 a:visited {
-    color: white;
+    color: #d0e1f9;
 }
 a:hover {
-    color: grey;
+    color: #4d648d;
 }
 a:active {
     color: darkgray;
@@ -61,3 +78,25 @@ a:active {
     margin-top: 3px;
     border: solid 1px grey;
 }
+.nav-top,
+.nav-bottom {
+    display: inline-block;
+    margin-left: 40px;
+}
+.nav-top {
+    margin-bottom: 30px;
+}
+.nav-bottom {
+    margin-top: 30px;
+}
+#profile,
+#contact {
+    padding-top: 41vh;
+}
+#project {
+    padding-bottom: 41vh;
+}
+/* midnight blue: #1e1f26
+indigo ink: #283655
+blueberry: #4d648d
+periwinkle: #d0e1f9 */
