@@ -8,39 +8,58 @@ body {
     background-size: cover;
     background-position: center bottom;
 }
+/* Flex Container */
 .flex-container {
     min-height: 100vh;
     display: flex;
     flex-flow: row wrap;
 }
 .flex-container>* {
-    /* BORDER */
-    /* border: solid 1px grey;  */
+    /* BORDER ---------------------- */
+    border: solid 1px grey; 
 }
-header {
-    flex: 0 1 50vw;
-}
+/* Flex Container Items */
 header h1 {
-    margin-left: 40px;
+    margin-left: 3vw;
+    font-size: 3vw;
 }
-main {
-    flex: 0 1 40vw;
+/* Flex Container Index Items */
+.flex-header-index {
+    flex-basis: 50vw;
+}
+.flex-header-main {
+    flex-basis: 70vw;
+}
+.flex-main-index {
+    flex-basis: 40vw;
     align-self: center;
 }
-footer {
-    text-align: center;
-    flex: 0 1 100vw;
+.flex-main-main {
+    flex-basis: 20vw;
 }
-.flex-nav {
+.flex-footer {
+    flex-basis: 9vw;
+}
+/* Flex Nav Index */
+.flex-nav-index {
     display: flex;
     flex-flow: row wrap;
     font-weight: 100;
     font-size: 2vw;
 }
-.flex-nav>* {
+.flex-nav-index>* {
     border: solid 1px #283655;
     border-top: none;
     flex-basis: calc(50% - 4px);
+}
+/* Flex Nav Main */
+.flex-nav-main {
+    display: flex;
+    flex-flow: row wrap;
+}
+.flex-nav-main>* {
+    border: solid 1px grey;
+    flex-basis: 100vw;
 }
 #profile,
 #contact {
