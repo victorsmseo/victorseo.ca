@@ -14,7 +14,8 @@ body {
     flex-flow: row wrap;
 }
 .flex-container>* {
-    /* border: dashed 1px grey; */
+    /* BORDER */
+    /* border: solid 1px grey;  */
 }
 header {
     flex: 0 1 50vw;
@@ -34,12 +35,12 @@ footer {
     display: flex;
     flex-flow: row wrap;
     font-weight: 100;
-    font-size: 2em;
+    font-size: 2vw;
 }
 .flex-nav>* {
     border: solid 1px #283655;
     border-top: none;
-    flex: 0 1 19.8vw;
+    flex-basis: calc(50% - 4px);
 }
 #profile,
 #contact {
