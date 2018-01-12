@@ -16,7 +16,7 @@ body {
 }
 .flex-container>* {
     /* BORDER ---------------------- */
-    border: solid 1px grey; 
+    /* border: solid 1px grey;  */
 }
 /* Flex Container Items */
 header h1 {
@@ -36,30 +36,52 @@ header h1 {
 }
 .flex-main-main {
     flex-basis: 20vw;
+    align-self: center;
+    /* min-height: 100vh; */
 }
 .flex-footer {
     flex-basis: 9vw;
 }
-/* Flex Nav Index */
-.flex-nav-index {
+/* Flex Nav */
+main {
+    /* BORDER ---------------------- */
+    /* border: solid 1px #283655; */
+}
+main nav {
     display: flex;
     flex-flow: row wrap;
+}
+main nav>* {
+    border: solid 1px #283655;
+}
+main nav a {
     font-weight: 100;
     font-size: 2vw;
 }
+/* Flex Nav Index */
 .flex-nav-index>* {
-    border: solid 1px #283655;
     border-top: none;
     flex-basis: calc(50% - 4px);
 }
 /* Flex Nav Main */
 .flex-nav-main {
-    display: flex;
-    flex-flow: row wrap;
+    align-items: center;
+    border-top: none;
+    border-bottom: none;
 }
 .flex-nav-main>* {
-    border: solid 1px grey;
-    flex-basis: 100vw;
+    flex-basis: 20vw;
+    border-top: none;
+}
+.flex-nav-main h2 {
+    font-size: 1em;
+    font-weight: 100;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    margin-bottom: -3px;
+}
+.flex-nav-main a {
+    padding: 15px 0px 15px 15px;
 }
 #profile,
 #contact {
@@ -114,7 +136,14 @@ a:active {
 .nav-bottom {
     margin-top: 30px;
 }
-
+.top-space {
+    padding-top: calc(100% - 4px);
+    border-bottom: none;
+}
+.bot-space {
+    padding-top: calc(100% - 4px);
+    border-bottom: none;
+}
 /* midnight blue: #1e1f26
 indigo ink: #283655
 blueberry: #4d648d
