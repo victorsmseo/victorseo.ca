@@ -14,24 +14,40 @@ body {
     display: flex;
     flex-flow: row wrap;
 }
-header h1 {
-    font-weight: 200;
-    margin-left: 3vw;
-    font-size: 3vw;
-}
 /* Flex Container Index */
-.flex-header-index {
+.flex-main-index {
     flex-basis: 60vw;
 }
 .flex-nav-index {
     flex-basis: 40vw;
 }
 /* Flex Container Section */
-.flex-header-section {
+.flex-main-section {
     flex-basis: 80vw;
 }
 .flex-nav-section {
     flex-basis: 20vw;
+}
+/* Flex Main */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+main>* {
+    /* BORDER ---------------------- */
+    /* border: solid 1px #283655; */
+    flex-basis: 100vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+main h1 {
+    font-weight: 200;
+    font-size: 3vw;
+}
+main section {
+    /* BORDER ---------------------- */
+    /* border: solid 1px #283655; */
 }
 /* Flex Nav */
 nav {

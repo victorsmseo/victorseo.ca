@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,64 +10,67 @@
 
 <body>
     <div class="flex-container">
-        <header>
+        <main class="flex-main-section">
             <h1>
                 <a href="index.html">Victor Seo</a>
             </h1>
-            <h2 class="title">Canvas</h2>
-        </header>
-        <main>
-            <canvas id="canvas" height="300" width="800">
-                Fallback content that will be displayed in case the web browser does not support the canvas tag or in case scripting is disabled.
-            </canvas>
+            <section>
+                <canvas id="canvas" height="600" width="1000px">
+                    Fallback content that will be displayed in case the web browser does not support the canvas tag or in case scripting is disabled.
+                </canvas>
+            </section>
+            <div></div>
+            <div></div>
         </main>
-        <footer>
-            <p>&copy; 2018</p>
-        </footer>
-        <script>
-            var canvas, ctx;
-            window.onload = init;
-            function init() {
-                // This function is called after the page is loaded
-                // 1 - Get the canvas
-                canvas = document.getElementById("canvas");
-                // 2 - Get the context
-                ctx = canvas.getContext('2d');
-                // 3 - we can draw
-                drawRectangle();
-                drawText();
-                drawRectCoord(0, 0);
-            }
-            function drawRectangle() {
-                ctx.fillStyle = 'red';
-                ctx.fillRect(10, 10, 100, 100);
-
-                ctx.strokeStyle = 'blue';
-                ctx.strokeRect(120, 10, 100, 100);
-
-                ctx.fillStyle = 'green';
-                ctx.fillRect(230, 10, 100, 100);
-                ctx.clearRect(240, 20, 30, 30);
-
-                ctx.strokeStyle = 'orange';
-                ctx.lineWidth = 5;
-                ctx.strokeRect(340, 10, 100, 100);
-            }
-            function drawText() {
-                ctx.font = 'italic 20pt Monospace';
-
-                ctx.fillStyle = 'blue';
-                ctx.fillText("Hello", 450, 30);
-
-                ctx.strokeStyle = 'purple';
-                ctx.strokeText("Hello", 560, 30);
-            }
-            function drawRectCoord(x, y) {
-                ctx.fillStyle = 'pink';
-                ctx.fillRect(10+x, 120+y, 100, 100);
-            }
-        </script>
+        <nav class="flex-nav-section">
+            <h2>Projects</h2>
+            <a href="canvas.html">Canvas</a>
+            <a href="monster.html">Monster Canvas</a>
+        </nav>
     </div>
+    <script>
+        var canvas, ctx;
+        window.onload = init;
+        function init() {
+            // This function is called after the page is loaded
+            // 1 - Get the canvas
+            canvas = document.getElementById("canvas");
+            // 2 - Get the context
+            ctx = canvas.getContext('2d');
+            // 3 - we can draw
+            drawRectangle();
+            drawText();
+            drawRectCoord(0, 0);
+        }
+        function drawRectangle() {
+            ctx.fillStyle = 'red';
+            ctx.fillRect(10, 10, 100, 100);
+
+            ctx.strokeStyle = 'blue';
+            ctx.strokeRect(120, 10, 100, 100);
+
+            ctx.fillStyle = 'green';
+            ctx.fillRect(230, 10, 100, 100);
+            ctx.clearRect(240, 20, 30, 30);
+
+            ctx.strokeStyle = 'orange';
+            ctx.lineWidth = 5;
+            ctx.strokeRect(340, 10, 100, 100);
+        }
+        function drawText() {
+            ctx.font = 'italic 20pt Monospace';
+
+            ctx.fillStyle = 'blue';
+            ctx.fillText("Hello", 450, 30);
+
+            ctx.strokeStyle = 'purple';
+            ctx.strokeText("Hello", 560, 30);
+        }
+        function drawRectCoord(x, y) {
+            ctx.fillStyle = 'pink';
+            ctx.fillRect(10 + x, 120 + y, 100, 100);
+        }
+    </script>
 </body>
 
 </html>

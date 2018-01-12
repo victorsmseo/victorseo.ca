@@ -1,3 +1,4 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,21 +10,25 @@
 
 <body>
     <div class="flex-container">
-        <header>
+        <main class="flex-main-section">
             <h1>
                 <a href="index.html">Victor Seo</a>
             </h1>
-            <h2 class="title"> Monster Canvas</h2>
-        </header>
-        <main>
-            <canvas id="canvas" height="300" width="800">
-                Fallback content that will be displayed in case the web browser does not support the canvas tag or in case scripting is disabled.
-            </canvas>
+            <section>
+                <canvas id="canvas" height="600" width="1000px">
+                    Fallback content that will be displayed in case the web browser does not support the canvas tag or in case scripting is disabled.
+                </canvas>
+            </section>
+            <div></div>
+            <div></div>
         </main>
-        <footer>
-            <p>&copy; 2018</p>
-        </footer>
-        <script>
+        <nav class="flex-nav-section">
+            <h2>Projects</h2>
+            <a href="canvas.html">Canvas</a>
+            <a href="monster.html">Monster Canvas</a>
+        </nav>
+    </div>
+    <script>
             var canvas, ctx;
             window.onload = init;
             function init() {
@@ -56,7 +61,6 @@
                 
             }
         </script>
-    </div>
 </body>
 
 </html>
