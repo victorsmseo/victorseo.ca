@@ -128,7 +128,7 @@ a:active {
 /* Canvas */
 #canvas {
     margin-top: 3px;
-    border: solid 1px grey;
+    background-color: white;
 }
 /* midnight blue: #1e1f26
 indigo ink: #283655
