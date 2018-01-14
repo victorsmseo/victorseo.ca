@@ -1,40 +1,46 @@
-
-
 var canvas;
 var ctx;
 window.onload = init;
 function init() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext('2d');
-    drawRectangle();
+    filledRect();
+    strokedRect();
+    windowRect();
+    thickRect();
+    filledStrokedRect();
     drawText();
-    drawRectCoord(0, 0);
 }
-function drawRectangle() {
+function filledRect() {
     ctx.fillStyle = 'red';
     ctx.fillRect(10, 10, 100, 100);
-
-    ctx.strokeStyle = 'blue';
+}
+function strokedRect() {
+    ctx.strokeStyle = 'green';
     ctx.strokeRect(120, 10, 100, 100);
-
-    ctx.fillStyle = 'green';
+}
+function windowRect() {
+    ctx.fillStyle = 'blue';
     ctx.fillRect(230, 10, 100, 100);
-    ctx.clearRect(240, 20, 30, 30);
-
+    ctx.clearRect(240, 20, 35, 35);
+    ctx.clearRect(240, 65, 35, 35);
+    ctx.clearRect(285, 20, 35, 35);
+    ctx.clearRect(285, 65, 35, 35);
+}
+function thickRect() {
     ctx.strokeStyle = 'orange';
-    ctx.lineWidth = 5;
-    ctx.strokeRect(340, 10, 100, 100);
+    ctx.lineWidth = 20;
+    ctx.strokeRect(350, 20, 100, 100);
+}
+function filledStrokedRect() {
+    ctx.strokeStyle = 'blue';
+    ctx.fillStyle = 'pink';
+    ctx.lineWidth = 10;
+    ctx.strokeRect(10, 120, 100, 100);
+    ctx.fillRect(10, 120, 100, 100);
 }
 function drawText() {
-    ctx.font = 'italic 20pt Monospace';
-
-    ctx.fillStyle = 'blue';
-    ctx.fillText("Hello", 450, 30);
-
-    ctx.strokeStyle = 'purple';
-    ctx.strokeText("Hello", 560, 30);
-}
-function drawRectCoord(x, y) {
-    ctx.fillStyle = 'pink';
-    ctx.fillRect(10 + x, 120 + y, 100, 100);
+    ctx.fillStyle = 'black';
+    ctx.font = 'bold 40pt Monospace';
+    ctx.fillText("Hello", 140, 180);
 }
