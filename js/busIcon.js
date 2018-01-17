@@ -4,15 +4,43 @@ window.onload = init;
 function init() {
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext('2d');
+    busIcon(50, 50, 0);
+    busIcon(250, 140, Math.PI);
+    busLoop(10);
+    busLoop(70);
+}
+function busLoop(h) {
+    busPattern(0, h);
+    busPattern(Math.PI/4, h);
+    busPattern(Math.PI/2, h);
+    busPattern(3*Math.PI/4, h);
+    busPattern(Math.PI, h);
+    busPattern(5*Math.PI/4, h);
+    busPattern(3*Math.PI/2, h);
+    busPattern(7*Math.PI/4, h);
+}
+function busPattern(r, h) {
+    ctx.save();
+    ctx.translate(500, 250);
+    ctx.rotate(r);
+    ctx.translate(0, h);
+    busIcon(0,0,0);
+    ctx.restore();
+}
+function busIcon(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(r);
     upperBus();
     midBus();
     lowerBus();
     mirror();
     light();
+    wipers();
+    ctx.restore();
 }
 function upperBus() {
-    ctx.lineWidth = 3;
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = '#EFEFEF';
     ctx.fillRect(10, 2, 70, 16);
     ctx.fillRect(30, 0, 30, 2);
     ctx.fillStyle = 'black';
@@ -54,4 +82,17 @@ function light() {
     ctx.fillStyle = 'yellow';
     ctx.fillRect(18, 65, 10, 7);
     ctx.fillRect(62, 65, 10, 7);
+}
+function wipers() {
+    ctx.fillStyle = 'black';
+    ctx.save();
+    ctx.translate(32, 54);
+    ctx.rotate(7*Math.PI/4);
+    ctx.fillRect(0, 0, 20, 1);
+    ctx.restore();
+    ctx.save();
+    ctx.translate(54, 54);
+    ctx.rotate(7*Math.PI/4);
+    ctx.fillRect(0, 0, 20, 1);
+    ctx.restore();
 }

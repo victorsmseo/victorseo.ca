@@ -6,7 +6,7 @@ body {
     background-image: url("images/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: left center;
 }
 /* Flex Container */
 .flex-container {
@@ -128,8 +128,8 @@ a:active {
 /* Canvas */
 #canvas {
     margin-top: 3px;
-    /* background-color: white; */
-    border: solid 1px #283655;
+    background-color: white;
+    /* border: solid 1px #283655; */
 }
 /* midnight blue: #1e1f26
 indigo ink: #283655
