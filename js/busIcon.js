@@ -8,6 +8,15 @@ function init() {
     busIcon(250, 140, Math.PI);
     busLoop(10);
     busLoop(70);
+    backgroundLine();
+}
+function backgroundLine() {
+    ctx.moveTo(5, 5);
+    ctx.lineTo(745, 5);
+    ctx.lineTo(745, 495);
+    ctx.lineTo(5, 495);
+    ctx.lineTo(5, 5);
+    ctx.stroke();
 }
 function busLoop(h) {
     busPattern(0, h);

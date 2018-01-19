@@ -11,6 +11,12 @@ function init() {
     thickRect();
     filledStrokedRect();
     drawText();
+    drawCircle();
+}
+function drawCircle() {
+    ctx.beginPath();
+    ctx.arc(400, 200, 10, 0, 2*Math.PI);
+    ctx.fill();
 }
 function filledRect() {
     ctx.fillStyle = 'red';
