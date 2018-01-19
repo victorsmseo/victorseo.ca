@@ -138,6 +138,10 @@ a:active {
     background-color: white;
     /* border: solid 1px #283655; */
 }
+#myCanvas {
+    margin-top: 3px;
+    background-color: white;
+}
 /* midnight blue: #1e1f26
 indigo ink: #283655
 blueberry: #4d648d
