@@ -94,13 +94,41 @@ function body() {
     ctx.fillStyle = "white";
     ctx.fillRect(67, 32, 46, 61);
     ctx.fillStyle = blue;
+    // Sliders
     ctx.fillRect(67, 32, 46, 1);
     ctx.fillRect(77, 36, 26, 1);
     ctx.fillRect(77, 42, 26, 1);
-    ctx.fillRect(80, 42, 26, 1);
+    ctx.fillRect(80, 41, 4, 3);
+    ctx.fillRect(92, 41, 8, 3);
     ctx.fillRect(77, 48, 26, 1);
+    ctx.fillRect(80, 47, 8, 3);
+    ctx.fillRect(96, 47, 4, 3);
     ctx.fillStyle = lightgrey;
     ctx.fillRect(67, 33, 46, 3);
+    // Grey stokes
+    ctx.strokeStyle = lightgrey;
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(68, 37, 8, 12);
+    ctx.strokeRect(104, 37, 8, 36);
+    ctx.strokeRect(77, 52, 8, 21);
+    ctx.strokeRect(95, 52, 8, 21);
+    ctx.strokeRect(77, 75, 8, 4);
+    ctx.strokeRect(86, 75, 8, 4);
+    ctx.strokeRect(95, 75, 8, 4);
+    ctx.strokeRect(104, 75, 8, 4);
+    ctx.strokeRect(95, 81, 8, 10);
+    ctx.strokeRect(104, 81, 8, 10);
+    // Grey fills
+    
+    // Blue blades
+    ctx.fillStyle = blue;
+    ctx.fillRect(68, 52.17, 8, 2);
+    ctx.fillRect(68, 55.33, 8, 2);
+    ctx.fillRect(68, 58.48, 8, 2);
+    ctx.fillRect(68, 61.64, 8, 2);
+    ctx.fillRect(68, 64.8, 8, 2);
+    ctx.fillRect(68, 67.69, 8, 2);
+    ctx.fillRect(68, 71, 8, 2);
 }
 function legs() {
     ctx.fillStyle = whitegrey;
