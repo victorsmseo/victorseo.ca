@@ -72,6 +72,7 @@ function head() {
     ctx.beginPath();
     ctx.arc(91, 20, 3, 0, 2*Math.PI);
     ctx.fill();
+    ctx.fillRect(95, 17, 1, 6);
     ctx.fillStyle = "red";
     ctx.beginPath();
     ctx.arc(92.5, 27.5, 1.5, 0, 2*Math.PI);
@@ -119,7 +120,9 @@ function body() {
     ctx.strokeRect(95, 81, 8, 10);
     ctx.strokeRect(104, 81, 8, 10);
     // Grey fills
-    
+    ctx.fillStyle = lightgrey;
+    ctx.fillRect(68, 74.8, 8, 16.5);
+    ctx.fillRect(77, 80.8, 8, 10.5);
     // Blue blades
     ctx.fillStyle = blue;
     ctx.fillRect(68, 52.17, 8, 2);
@@ -129,6 +132,19 @@ function body() {
     ctx.fillRect(68, 64.8, 8, 2);
     ctx.fillRect(68, 67.69, 8, 2);
     ctx.fillRect(68, 71, 8, 2);
+    // Blue fills
+    ctx.fillRect(86, 80.8, 8, 10.5);
+    ctx.fillRect(86, 51.8, 8, 21.3);
+    // Lightblue fills
+    ctx.fillStyle = lightblue;
+    ctx.beginPath();
+    ctx.arc(90, 86, 3, 0, 2*Math.PI);
+    ctx.fill();
+    // Black fills
+    ctx.fillStyle = "black";
+    ctx.beginPath();
+    ctx.arc(90, 86, 1.5, 0, 2*Math.PI);
+    ctx.fill();
 }
 function legs() {
     ctx.fillStyle = whitegrey;
@@ -153,4 +169,44 @@ function legs() {
     ctx.lineTo(122, 92);
     ctx.lineTo(128, 107);
     ctx.fill();
+    // Blue fill
+    ctx.fillStyle = blue;
+    ctx.fillRect(120, 61, 1, 18);
+    ctx.fillRect(59, 61, 1, 18);
+    // Grey strokes
+    ctx.strokeStyle = lightgrey;
+    ctx.strokeRect(120, 37, 3, 23);
+    ctx.strokeRect(57, 37, 3, 23);
+    ctx.strokeRect(118, 83, 3, 9);
+    ctx.strokeRect(59, 83, 3, 9);
+    ctx.beginPath();
+    ctx.moveTo(118, 103);
+    ctx.lineTo(118, 106);
+    ctx.lineTo(126.5, 106);
+    ctx.lineTo(125.2, 103);
+    ctx.lineTo(118, 103);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(62, 103);
+    ctx.lineTo(62, 106);
+    ctx.lineTo(53.5, 106);
+    ctx.lineTo(54.8, 103);
+    ctx.lineTo(62, 103);
+    ctx.stroke();
+    // Grey fills
+    ctx.fillStyle = lightgrey;
+    ctx.beginPath();
+    ctx.moveTo(117.2, 93);
+    ctx.lineTo(117.2, 106.2);
+    ctx.lineTo(111, 106.2);
+    ctx.lineTo(114.5, 93);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(62.7, 93);
+    ctx.lineTo(62.7, 106.2);
+    ctx.lineTo(68.2, 106.2);
+    ctx.lineTo(65.6, 93);
+    ctx.fill();
+    ctx.fillRect(120, 79, 1, 3);
+    ctx.fillRect(59, 79, 1, 3);
 }
