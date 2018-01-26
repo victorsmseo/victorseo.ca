@@ -1,8 +1,19 @@
 var canvas;
 var ctx;
-// Colors: blk1, blk2, blk3, 
 var colors = ["#000000", "#191919", "#333333"];
+
+const colorGrey = "#373737";
+const colorGreyLight1 = "#4F4F4F";
+const colorGreyLight2 = "#7F7F7F";
+const colorGreyLight3 = "#B3B3B3";
+const colorOrange = "#DD510C";
+const colorOrangeLight = "#FF8C1A";
+const colorOrangeDark = "#B04109";
+const colorPurple = "#224FDF";
+const colorPurpleLight1 = "#3C66E2";
+
 window.onload = init;
+
 function init() {
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
@@ -12,6 +23,8 @@ function drawCar() {
     ctx.save();
     ctx.scale(8, 8);
     drawFrame();
+    drawPaint();
+    drawTireLeft();
     ctx.restore();
 }
 function drawFrame() {
@@ -78,8 +91,66 @@ function drawFrame() {
     ctx.fillRect(85, 17, 3, 1);
     ctx.fillRect(88, 18, 1, 1);
     ctx.fillRect(89, 19, 1, 2);
-    ctx.fillRect(7, 21, 21, 1);
-    ctx.fillRect(6, 23, 23, 1);
-    ctx.fillRect(6, 25, 24, 1);
-    ctx.fillRect(6, 14, 22, 2);
+    // Black parts
+    // ctx.fillRect(7, 21, 21, 1);
+    // ctx.fillRect(6, 23, 23, 1);
+    // ctx.fillRect(6, 25, 24, 1);
+    // ctx.fillRect(6, 14, 22, 2);
+}
+function drawPaint() {
+    ctx.fillStyle = colorPurple;
+    ctx.fillRect(1, 16, 43, 12);
+    ctx.fillRect(54, 17, 27, 11);
+    ctx.fillStyle = colorPurpleLight1;
+    ctx.fillRect(40, 11, 51, 6);
+}
+function drawTireLeft() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(46, 21, 7, 8);
+    ctx.fillRect(47, 19, 5, 2);
+    ctx.fillRect(48, 18, 3, 1);
+    ctx.fillRect(47, 29, 5, 2);
+    ctx.fillRect(48, 31, 3, 1);
+    ctx.fillStyle = "black";
+    ctx.fillRect(47, 21, 1, 2);
+    ctx.fillRect(49, 24, 1, 2);
+    ctx.fillRect(48, 27, 1, 2);
+    ctx.fillRect(48,16,3,1);
+    ctx.fillStyle = colorGrey;
+    ctx.fillRect(48, 24, 1, 2);
+    ctx.fillRect(49, 22, 1, 2);
+    ctx.fillRect(47, 23, 1, 1);
+    ctx.fillRect(48, 21, 1, 1);
+    ctx.fillStyle = colorGreyLight1;
+    ctx.fillRect(49, 26, 1, 1);
+    ctx.fillRect(51,24,1,3);
+    ctx.fillRect(51,20,1,3);
+    ctx.fillRect(48,19,3,1);
+    ctx.fillRect(48,20,2,1);
+    ctx.fillStyle = colorGreyLight2;
+    ctx.fillRect(48,26,1,1);
+    ctx.fillRect(49,27,1,1);
+    ctx.fillRect(47,24,1,5);
+    ctx.fillRect(51,27,1,3);
+    ctx.fillRect(48,30,1,1);
+    ctx.fillRect(50,30,1,1);
+    ctx.fillRect(50,25,1,2);
+    ctx.fillRect(50,20,1,4);
+    ctx.fillRect(51,23,1,1);
+    ctx.fillRect(48,22,1,2);
+    ctx.fillRect(49,21,1,1);
+    ctx.fillStyle = colorGreyLight3;
+    ctx.fillRect(49,30,1,1);
+    ctx.fillRect(48,29,2,1);
+    ctx.fillRect(50,27,1,3);
+    ctx.fillRect(51,30,1,1);
+    ctx.fillRect(50,24,1,1);
+    ctx.fillStyle = colorOrange;
+    ctx.fillRect(44,22,1,1);
+    ctx.fillRect(45,19,1,1);
+    ctx.fillRect(57,18,1,1);
+    ctx.fillStyle = colorOrangeLight;
+    ctx.fillRect(44,21,1,1);
+    ctx.fillStyle = colorOrangeDark;
+    ctx.fillRect(45,20,1,1);
 }
