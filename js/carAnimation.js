@@ -1,7 +1,85 @@
 var canvas;
 var ctx;
+// Colors: blk1, blk2, blk3, 
+var colors = ["#000000", "#191919", "#333333"];
 window.onload = init;
 function init() {
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
+    drawCar();
+}
+function drawCar() {
+    ctx.save();
+    ctx.scale(8, 8);
+    drawFrame();
+    ctx.restore();
+}
+function drawFrame() {
+    ctx.fillStyle = colors[0];
+    ctx.fillRect(2, 30, 15, 1);
+    ctx.fillRect(4, 31, 12, 1);
+    ctx.fillRect(5, 32, 10, 1);
+    ctx.fillRect(26, 30, 21, 1);
+    ctx.fillRect(37, 31, 11, 1);
+    ctx.fillRect(38, 32, 16, 1);
+    ctx.fillRect(51, 31, 4, 1);
+    ctx.fillRect(52, 30, 32, 1);
+    ctx.fillRect(77, 31, 8, 1);
+    ctx.fillRect(78, 32, 12, 1);
+    ctx.fillRect(88, 31, 2, 1);
+    ctx.fillRect(89, 29, 1, 2);
+    ctx.fillRect(90, 27, 1, 3);
+    ctx.fillRect(91, 26, 1, 1);
+    ctx.fillRect(92, 22, 1, 4);
+    ctx.fillRect(93, 15, 1, 7);
+    ctx.fillRect(92, 14, 1, 1);
+    ctx.fillRect(91, 10, 1, 4);
+    ctx.fillRect(89, 9, 2, 1);
+    ctx.fillRect(83, 8, 6, 1);
+    ctx.fillRect(82, 7, 1, 1);
+    ctx.fillRect(80, 6, 2, 1);
+    ctx.fillRect(79, 5, 1, 1);
+    ctx.fillRect(78, 4, 1, 1);
+    ctx.fillRect(76, 3, 2, 1);
+    ctx.fillRect(74, 2, 2, 1);
+    ctx.fillRect(71, 1, 3, 1);
+    ctx.fillRect(35, 0, 36, 1);
+    ctx.fillRect(33, 1, 2, 1);
+    ctx.fillRect(31, 2, 2, 1);
+    ctx.fillRect(30, 3, 1, 1);
+    ctx.fillRect(28, 4, 2, 1);
+    ctx.fillRect(27, 5, 1, 1);
+    ctx.fillRect(26, 6, 1, 1);
+    ctx.fillRect(25, 7, 1, 1);
+    ctx.fillRect(19, 8, 6, 1);
+    ctx.fillRect(8, 9, 11, 1);
+    ctx.fillRect(5, 10, 3, 1);
+    ctx.fillRect(3, 11, 2, 1);
+    ctx.fillRect(2, 12, 1, 1);
+    ctx.fillRect(1, 13, 1, 3);
+    ctx.fillRect(0, 16, 1, 12);
+    ctx.fillRect(1, 28, 1, 1);
+    ctx.fillRect(2, 29, 45, 1);
+    ctx.fillRect(44, 24, 1, 5);
+    ctx.fillRect(45, 21, 1, 8);
+    ctx.fillRect(46, 18, 1, 3);
+    ctx.fillRect(47, 17, 1, 2);
+    ctx.fillRect(48, 16, 3, 2);
+    ctx.fillRect(51, 17, 2, 2);
+    ctx.fillRect(52, 19, 2, 2);
+    ctx.fillRect(53, 21, 1, 9);
+    ctx.fillRect(52, 29, 1, 1);
+    ctx.fillRect(80, 29, 4, 1);
+    ctx.fillRect(81, 27, 2, 2);
+    ctx.fillRect(82, 22, 1, 5);
+    ctx.fillRect(82, 22, 1, 5);
+    ctx.fillRect(83, 19, 1, 2);
+    ctx.fillRect(84, 18, 1, 1);
+    ctx.fillRect(85, 17, 3, 1);
+    ctx.fillRect(88, 18, 1, 1);
+    ctx.fillRect(89, 19, 1, 2);
+    ctx.fillRect(7, 21, 21, 1);
+    ctx.fillRect(6, 23, 23, 1);
+    ctx.fillRect(6, 25, 24, 1);
+    ctx.fillRect(6, 14, 22, 2);
 }
