@@ -25,6 +25,7 @@ function drawCar() {
     drawFrame();
     drawPaint();
     drawTireLeft();
+    drawTireRight();
     ctx.restore();
 }
 function drawFrame() {
@@ -153,4 +154,45 @@ function drawTireLeft() {
     ctx.fillRect(44,21,1,1);
     ctx.fillStyle = colorOrangeDark;
     ctx.fillRect(45,20,1,1);
+}
+function drawTireRight() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(83,21,7,8);
+    ctx.fillRect(84,29,5,2);
+    ctx.fillRect(85,31,3,1);
+    ctx.fillRect(84,19,5,2);
+    ctx.fillRect(85,18,3,2);
+    ctx.fillStyle = "black";
+    ctx.fillRect(84,21,1,2);
+    ctx.fillRect(86,24,1,2);
+    ctx.fillRect(85,27,1,2);
+    ctx.fillStyle = colorGrey;
+    ctx.fillRect(84,23,1,1);
+    ctx.fillRect(85,24,1,2);
+    ctx.fillRect(86,22,1,2);
+    ctx.fillRect(85,21,1,1);
+    ctx.fillStyle = colorGreyLight1;
+    ctx.fillRect(85,19,3,1);
+    ctx.fillRect(85,20,2,1);
+    ctx.fillRect(88,20,1,3);
+    ctx.fillRect(86,26,1,1);
+    ctx.fillRect(88,24,1,3);
+    ctx.fillRect(84,25,1,2);
+    ctx.fillStyle = colorGreyLight2;
+    ctx.fillRect(84,24,1,1);
+    ctx.fillRect(85,22,1,2);
+    ctx.fillRect(85,26,1,1);
+    ctx.fillRect(86,27,1,1);
+    ctx.fillRect(84,27,1,2);
+    ctx.fillRect(85,30,1,1);
+    ctx.fillRect(87,30,1,1);
+    ctx.fillRect(88,27,1,3);
+    ctx.fillRect(86,21,1,1);
+    ctx.fillRect(87,20,1,4);
+    ctx.fillRect(88,23,1,1);
+    ctx.fillStyle = colorGreyLight3;
+    ctx.fillRect(85,29,1,1);
+    ctx.fillRect(86,30,1,1);
+    ctx.fillRect(86,28,2,2);
+    ctx.fillRect(87,24,1,4);
 }
