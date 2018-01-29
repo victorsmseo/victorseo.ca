@@ -12,9 +12,11 @@ const colorGreyLight4 = "#BCBCBC";
 const colorOrange = "#DD510C";
 const colorOrangeLight = "#FF8C1A";
 const colorOrangeDark = "#B04109";
+
 const colorPurple = "#224FDF";
 const colorPurpleLight1 = "#3C66E2";
 const colorPurpleLight2 = "#5A7CE7";
+const colorPurpleLight3 = "#7993EC";
 
 window.onload = init;
 
@@ -108,6 +110,7 @@ function drawPaint() {
     paintDefault();
     paintLight1();
     paintLight2();
+    paintLight3();
 }
 function paintDefault() {
     ctx.fillStyle = colorPurple;
@@ -305,6 +308,36 @@ function paintLight2() {
     ctx.fillRect(85,15,3,1);
     ctx.fillRect(88,16,1,1);
     ctx.fillRect(89,17,1,1);
+}
+function paintLight3() {
+    ctx.fillStyle = colorPurpleLight3;
+    ctx.fillRect(3,12,1,1);
+    ctx.fillRect(5,11,1,1);
+    ctx.fillRect(8,10,1,1);
+    ctx.fillRect(14,11,1,1);
+    ctx.fillRect(15,10,1,1);
+    ctx.fillRect(19,9,24,1);
+    ctx.fillRect(24,6,1,1);
+    ctx.fillRect(1,26,3,1);
+    ctx.fillRect(6,26,2,1);
+    ctx.fillRect(8,27,16,1);
+    ctx.fillRect(23,26,6,1);
+    ctx.fillRect(33,26,6,1);
+    ctx.fillRect(31,3,1,1);
+    ctx.fillRect(33,2,1,1);
+    ctx.fillRect(35,1,8,1,);
+    ctx.fillRect(56,1,15,1);
+    ctx.fillRect(58,24,2,1);
+    ctx.fillRect(59,23,1,1);
+    ctx.fillRect(61,23,6,1);
+    ctx.fillRect(61,24,16,1);
+    ctx.fillRect(80,10,1,1);
+    ctx.fillRect(81,9,5,1);
+    ctx.fillRect(82,8,1,1);
+    ctx.fillRect(75,3,1,1);
+    ctx.fillRect(71,2,3,1);
+    ctx.fillRect(59,2,1,1);
+    ctx.fillRect(58,3,1,1);
 }
 function drawFront() {
     ctx.fillStyle = "black";
