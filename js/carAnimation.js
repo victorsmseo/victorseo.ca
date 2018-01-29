@@ -107,6 +107,7 @@ function drawFrame() {
 function drawPaint() {
     paintDefault();
     paintLight1();
+    paintLight2();
 }
 function paintDefault() {
     ctx.fillStyle = colorPurple;
@@ -245,6 +246,65 @@ function paintLight1() {
     ctx.fillRect(57,24,1,1);
     ctx.fillRect(58,23,1,1);
     ctx.fillRect(67,23,5,1);
+    ctx.fillRect(58,10,1,1);
+}
+function paintLight2() {
+    ctx.fillStyle = colorPurpleLight2;
+    ctx.fillRect(4,12,1,1);
+    ctx.fillRect(6,11,1,1);
+    ctx.fillRect(2,16,1,1);
+    ctx.fillRect(3,17,2,1);
+    ctx.fillRect(6,16,2,1);
+    ctx.fillRect(29,16,1,2);
+    ctx.fillRect(34,17,4,1);
+    ctx.fillRect(1,27,4,1);
+    ctx.fillRect(5,26,1,1);
+    ctx.fillRect(7,27,1,1);
+    ctx.fillRect(8,26,15,1);
+    ctx.fillRect(24,27,1,1);
+    ctx.fillRect(29,26,1,1);
+    ctx.fillRect(31,27,10,1);
+    ctx.fillRect(32,26,1,1);
+    ctx.fillRect(39,26,1,1);
+    ctx.fillRect(9,10,6,1);
+    ctx.fillRect(15,11,15,1);
+    ctx.fillRect(16,10,21,1);
+    ctx.fillRect(37,11,9,1);
+    ctx.fillRect(46,10,12,1);
+    ctx.fillRect(59,10,1,1);
+    ctx.fillRect(62,10,14,1);
+    ctx.fillRect(76,9,1,1);
+    ctx.fillRect(77,8,1,1);
+    ctx.fillRect(61,8,1,1);
+    ctx.fillRect(66,7,1,2);
+    ctx.fillRect(78,11,3,1);
+    ctx.fillRect(79,10,1,1);
+    ctx.fillRect(80,9,1,1);
+    ctx.fillRect(81,10,2,1);
+    ctx.fillRect(86,9,1,1);
+    ctx.fillRect(80,7,2,1);
+    ctx.fillRect(79,6,1,1);
+    ctx.fillRect(78,5,1,1);
+    ctx.fillRect(77,4,1,1);
+    ctx.fillRect(74,3,1,1);
+    ctx.fillRect(56,7,1,1);
+    ctx.fillRect(57,5,1,2);
+    ctx.fillRect(58,4,2,1);
+    ctx.fillRect(59,3,2,1);
+    ctx.fillRect(60,2,2,1);
+    ctx.fillRect(43,1,13,1);
+    ctx.fillRect(28,5,1,1);
+    ctx.fillRect(30,4,1,1);
+    ctx.fillRect(46,16,1,1);
+    ctx.fillRect(47,15,1,1);
+    ctx.fillRect(48,14,3,1);
+    ctx.fillRect(51,15,2,1);
+    ctx.fillRect(53,16,1,1);
+    ctx.fillRect(83,17,1,1);
+    ctx.fillRect(84,16,1,1);
+    ctx.fillRect(85,15,3,1);
+    ctx.fillRect(88,16,1,1);
+    ctx.fillRect(89,17,1,1);
 }
 function drawFront() {
     ctx.fillStyle = "black";
