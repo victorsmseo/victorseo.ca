@@ -1,6 +1,9 @@
 var canvas;
 var ctx;
 
+var lanePosition = 0;
+var carPosition = 0;
+
 const colorGrey = "#373737";
 const colorGreyDark1 = "#252525";
 const colorGreyDark2 = "#191919";
@@ -8,6 +11,8 @@ const colorGreyLight1 = "#4F4F4F";
 const colorGreyLight2 = "#7F7F7F";
 const colorGreyLight3 = "#989898";
 const colorGreyLight4 = "#BCBCBC";
+
+const colorGreen = "#8ACCFC";
 
 const colorOrange = "#DD510C";
 const colorOrangeLight = "#FF8C1A";
@@ -20,16 +25,49 @@ const colorPurpleLight1 = "#3C66E2";
 const colorPurpleLight2 = "#5A7CE7";
 const colorPurpleLight3 = "#7993EC";
 
+const colorYellow = "#EEC830";
+
 window.onload = init;
 
 function init() {
     canvas = document.getElementById("myCanvas");
     ctx = canvas.getContext("2d");
-    drawCar();
+    startAnimation();
 }
-function drawCar() {
+function startAnimation() {
+    requestId = requestAnimationFrame(animationLoop);
+}
+function animationLoop(timestamp) {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    drawBackground();
+    drawAsphalt(lanePosition);
+    drawCar(carPosition);
+    lanePosition += 30;
+    lanePosition %= canvas.width;
+    carPosition += 1;
+    carPosition %= 3;
+    requestId = requestAnimationFrame(animationLoop);
+}
+function drawBackground() {
+    ctx.fillStyle = colorGreen;
+    ctx.fillRect(0,0,canvas.width,2*canvas.height/3);
+}
+function drawAsphalt(x) {
     ctx.save();
-    ctx.scale(8, 8);
+    ctx.restore();
+    ctx.fillStyle = colorGrey;
+    ctx.fillRect(0, 2*canvas.height/3, canvas.width, canvas.height/3);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 2*canvas.height/3, canvas.width, 8);
+    ctx.fillStyle = colorYellow;
+    ctx.fillRect(x-450, 450, canvas.width/4, 8);
+    ctx.fillRect(x, 450, canvas.width/4, 8);
+    ctx.fillRect(x+450, 450, canvas.width/4, 8);
+}
+function drawCar(x) {
+    ctx.save();
+    ctx.translate(150+x,250+x);
+    ctx.scale(5,5);
     drawFrame();
     drawPaint();
     drawFront();
@@ -457,7 +495,7 @@ function drawFront() {
     ctx.fillRect(5,14,1,1);
     ctx.fillRect(6,15,1,1);
     ctx.fillStyle = "white";
-    ctx.fillRect(5,5,1,1);
+    ctx.fillRect(5,15,1,1);
     ctx.fillRect(3,16,2,1);
     ctx.fillRect(2,14,1,2);
     // Right headlight
