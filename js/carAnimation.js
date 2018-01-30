@@ -43,30 +43,28 @@ function animationLoop(timestamp) {
     drawAsphalt(lanePosition);
     drawCar(carPosition);
     lanePosition += 30;
-    lanePosition %= canvas.width;
+    lanePosition %= canvas.width/2;
     carPosition += 1;
-    carPosition %= 3;
+    // carPosition %= 10;
     requestId = requestAnimationFrame(animationLoop);
 }
 function drawBackground() {
     ctx.fillStyle = colorGreen;
-    ctx.fillRect(0,0,canvas.width,2*canvas.height/3);
+    ctx.fillRect(0,0,canvas.width,canvas.height);
 }
 function drawAsphalt(x) {
     ctx.save();
     ctx.restore();
     ctx.fillStyle = colorGrey;
-    ctx.fillRect(0, 2*canvas.height/3, canvas.width, canvas.height/3);
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 2*canvas.height/3, canvas.width, 8);
+    ctx.fillRect(0, 6*canvas.height/7, canvas.width, canvas.height/5);
     ctx.fillStyle = colorYellow;
-    ctx.fillRect(x-450, 450, canvas.width/4, 8);
-    ctx.fillRect(x, 450, canvas.width/4, 8);
-    ctx.fillRect(x+450, 450, canvas.width/4, 8);
+    ctx.fillRect(x-canvas.width/2, 460, canvas.width/4, 8);
+    ctx.fillRect(x, 460, canvas.width/4, 8);
+    ctx.fillRect(x+canvas.width/2, 460, canvas.width/4, 8);
 }
 function drawCar(x) {
     ctx.save();
-    ctx.translate(150+x,250+x);
+    ctx.translate(150,339+4*Math.sin(x/15));
     ctx.scale(5,5);
     drawFrame();
     drawPaint();
