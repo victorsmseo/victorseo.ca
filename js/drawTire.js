@@ -57,7 +57,7 @@ function rotateTireLeft(wheelPosition) {
         tire2(5, 5, 75, 86);
         tire3(5, 5, 75, 86);
         tire4(5, 5, 75, 86);
-    } else if (wheelPosition < 10) {
+    } else if (wheelPosition < 5) {
         tire1(5, -5, 75, -98);
         tire2(-5, 5, -80, 86);
         tire3(-5, 5, -80, 86);
@@ -117,6 +117,7 @@ function tire1(scaleX, scaleY, translateX, translateY) {
     ctx.fillStyle = colorGreyLight2;
     ctx.fillRect(2, 2, 1, 1);
     ctx.fillRect(1, 3, 1, 2);
+    ctx.fillRect(0,5,1,1);
 
     ctx.restore();
 }

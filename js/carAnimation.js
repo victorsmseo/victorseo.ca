@@ -29,13 +29,53 @@ function animationLoop(timestamp) {
 }
 function drawBackground() {
     const colorWater = "#0FB4D0";
+    const colorGreen = "#8DC540"
+    const colorGreenLight = "#C6D82C";
+    
     // background.jpeg
     // width: 645, height: 334
     // Add 53 for extra height
     ctx.save();
     ctx.scale(1.1628,1.1628);
     ctx.fillStyle = colorWater;
-    ctx.fillRect(0,268,645,119);
+    ctx.fillRect(0,268-17,645,119+17);
+
+    // Hill 1
+    ctx.fillStyle = colorGreenLight;
+    ctx.beginPath();
+    ctx.moveTo(0, 237);
+    ctx.lineTo(0,251);
+    ctx.lineTo(140,251);
+    ctx.fill();
+    // Hill 2
+    ctx.fillStyle = colorGreen;
+    ctx.moveTo(140,251);
+    ctx.lineTo(216,207);
+    ctx.lineTo(551,251);
+    ctx.fill();
+    // Hill 3
+    ctx.fillStyle = colorGreen;
+    ctx.moveTo(573,254);
+    ctx.lineTo(645,226);
+    ctx.lineTo(646,254);
+    ctx.fill();
+    // Hill 4
+    ctx.fillStyle = colorGreen;
+    ctx.moveTo(388,268);
+    ctx.lineTo(509,232);
+    ctx.lineTo(645,252);
+    ctx.lineTo(645,268);
+    ctx.fill();
+    // Hill 5
+    ctx.fillStyle = colorGreenLight;
+    ctx.beginPath();
+    ctx.moveTo(0, 258);
+    ctx.lineTo(145,227);
+    ctx.lineTo(336,268);
+    ctx.lineTo(0,268);
+    ctx.fill();
+    
+
     ctx.restore();
 }
 function car(carPosition) {

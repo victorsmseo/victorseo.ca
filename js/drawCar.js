@@ -25,19 +25,7 @@ function drawCar() {
 }
 function drawFrame() {
     ctx.fillStyle = "black";
-    // ctx.fillRect(2, 30, 15, 1);
-    // ctx.fillRect(4, 31, 12, 1);
-    // ctx.fillRect(5, 32, 10, 1);
-    // ctx.fillRect(26, 30, 21, 1);
-    // ctx.fillRect(37, 31, 11, 1);
-    // ctx.fillRect(38, 32, 16, 1);
-    // ctx.fillRect(51, 31, 4, 1);
     ctx.fillRect(54, 30, 26, 1);
-    // ctx.fillRect(77, 31, 8, 1);
-    // ctx.fillRect(78, 32, 12, 1);
-    // ctx.fillRect(88, 31, 2, 1);
-    // ctx.fillRect(89, 29, 1, 2);
-    // ctx.fillRect(90, 27, 1, 3);
     ctx.fillRect(91, 26, 1, 1);
     ctx.fillRect(92, 22, 1, 4);
     ctx.fillRect(93, 15, 1, 7);
@@ -69,24 +57,6 @@ function drawFrame() {
     ctx.fillRect(0, 16, 1, 12);
     ctx.fillRect(1, 28, 1, 1);
     ctx.fillRect(2, 29, 42, 1);
-    // ctx.fillRect(44, 24, 1, 5);
-    // ctx.fillRect(45, 21, 1, 8);
-    // ctx.fillRect(46, 18, 1, 3);
-    // ctx.fillRect(47, 17, 1, 2);
-    // ctx.fillRect(48, 16, 3, 2);
-    // ctx.fillRect(51, 17, 2, 2);
-    // ctx.fillRect(52, 19, 2, 2);
-    // ctx.fillRect(53, 21, 1, 9);
-    // ctx.fillRect(52, 29, 1, 1);
-    // ctx.fillRect(80, 29, 4, 1);
-    // ctx.fillRect(81, 27, 2, 2);
-    // ctx.fillRect(82, 22, 1, 5);
-    // ctx.fillRect(82, 22, 1, 5);
-    // ctx.fillRect(83, 19, 1, 2);
-    // ctx.fillRect(84, 18, 1, 1);
-    // ctx.fillRect(85, 17, 3, 1);
-    // ctx.fillRect(88, 18, 1, 1);
-    // ctx.fillRect(89, 19, 1, 2);
     ctx.fillRect(75,13,3,1);
     ctx.fillStyle = colorOrange;
     ctx.fillRect(44,22,1,1);
