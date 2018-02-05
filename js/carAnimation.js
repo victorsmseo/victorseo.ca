@@ -36,7 +36,6 @@ function drawBackground() {
 
     // background.jpeg
     // width: 645, height: 334
-
     
     // Add 53 for extra height
     ctx.save();
@@ -75,6 +74,21 @@ function drawBackground() {
     ctx.lineTo(174,127);
     ctx.fill();
     // Mountain 3
+    ctx.fillStyle = colorNavy;
+    ctx.beginPath(353,89);
+    ctx.moveTo(347,102);
+    ctx.lineTo(357,90);
+    ctx.lineTo(356,104);
+    ctx.lineTo(350,130);
+    ctx.lineTo(368,130);
+    ctx.lineTo(408,250);
+    ctx.lineTo(259,250);
+    ctx.lineTo(259,153);
+    ctx.lineTo(297,115);
+    ctx.lineTo(334,113);
+    ctx.lineTo(346,95);
+    ctx.fill();
+    // Mountain 4
     ctx.fillStyle = colorNavyLight;
     ctx.beginPath();
     ctx.moveTo(196,104);
@@ -89,27 +103,57 @@ function drawBackground() {
     ctx.lineTo(210,167);
     ctx.lineTo(196,128);
     ctx.fill();
-    // // Mountain 4
-    // ctx.fillStyle = colorNavy;
-    // ctx.beginPath();
-    // ctx.moveTo();
-    // ctx.lineTo();
-    // ctx.lineTo();
-    // ctx.fill();
-    // // Mountain 5
-    // ctx.fillStyle = colorNavyLight;
-    // ctx.beginPath();
-    // ctx.moveTo();
-    // ctx.lineTo();
-    // ctx.lineTo();
-    // ctx.fill();
+    // Mountain 5
+    ctx.fillStyle = colorNavyLight;
+    ctx.beginPath();
+    ctx.moveTo(373,82);
+    ctx.lineTo(387,92);
+    ctx.lineTo(409,129);
+    ctx.lineTo(439,132);
+    ctx.lineTo(477,169);
+    ctx.lineTo(527,123);
+    ctx.lineTo(544,110);
+    ctx.lineTo(537,122);
+    ctx.lineTo(549,112);
+    ctx.lineTo(546,128);
+    ctx.lineTo(557,103);
+    ctx.lineTo(555,129);
+    ctx.lineTo(540,170);
+    ctx.lineTo(570,156);
+    ctx.lineTo(620,268);
+    ctx.lineTo(407,250);
+    ctx.lineTo(367,131);
+    ctx.lineTo(349,131);
+    ctx.lineTo(355,104);
+    ctx.lineTo(362,89);
+    ctx.lineTo(366,106);
+    ctx.lineTo(369,88);
+    ctx.lineTo(381,103);
+    ctx.fill();
     // // Mountain 6
-    // ctx.fillStyle = colorNavy;
-    // ctx.beginPath();
-    // ctx.moveTo();
-    // ctx.lineTo();
-    // ctx.lineTo();
-    // ctx.fill();
+    ctx.fillStyle = colorNavy;
+    ctx.beginPath();
+    ctx.moveTo(574,101);
+    ctx.lineTo(579,128);
+    ctx.lineTo(581,106);
+    ctx.lineTo(587,116);
+    ctx.lineTo(590,107);
+    ctx.lineTo(598,133);
+    ctx.lineTo(599,117);
+    ctx.lineTo(605,122);
+    ctx.lineTo(608,112);
+    ctx.lineTo(613,123);
+    ctx.lineTo(616,114);
+    ctx.lineTo(645,144);
+    ctx.lineTo(645,267);
+    ctx.lineTo(618,267);
+    ctx.lineTo(568,158);
+    ctx.lineTo(539,171);
+    ctx.lineTo(555,128);
+    ctx.lineTo(561,116);
+    ctx.lineTo(566,122);
+    ctx.lineTo(566,110);
+    ctx.fill();
 
     // Water
     ctx.fillStyle = colorWater;

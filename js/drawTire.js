@@ -57,7 +57,7 @@ function rotateTireLeft(wheelPosition) {
         tire2(5, 5, 75, 86);
         tire3(5, 5, 75, 86);
         tire4(5, 5, 75, 86);
-    } else if (wheelPosition < 5) {
+    } else if (wheelPosition < 10) {
         tire1(5, -5, 75, -98);
         tire2(-5, 5, -80, 86);
         tire3(-5, 5, -80, 86);
