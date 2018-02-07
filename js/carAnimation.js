@@ -31,6 +31,7 @@ function drawBackground() {
     const colorWater = "#0FB4D0";
     const colorGreen = "#8DC540"
     const colorGreenLight = "#C6D82C";
+    const colorIce = "#B8E8E8";
     const colorNavy = "#36517A";
     const colorNavyLight = "#1C6A88";
 
@@ -40,6 +41,49 @@ function drawBackground() {
     // Add 53 for extra height
     ctx.save();
     ctx.scale(1.1628, 1.1628);
+
+    // Ice 1
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.moveTo(178,74);
+    ctx.lineTo(211,168);
+    ctx.lineTo(211,200);
+    ctx.lineTo(137,200);
+    ctx.lineTo(137,114);
+    ctx.fill();
+
+    // Ice 2
+    ctx.fillStyle = colorIce;
+    ctx.beginPath();
+    ctx.moveTo(178,74);
+    ctx.lineTo(226,121);
+    ctx.lineTo(211,168);
+    ctx.fill();
+    // Ice 3
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.moveTo(366,64);
+    ctx.lineTo(387,92);
+    ctx.lineTo(387,140);
+    ctx.lineTo(345,140);
+    ctx.lineTo(345,95);
+    ctx.fill();
+    // Ice 4
+    ctx.fillStyle = colorIce;
+    ctx.beginPath();
+    ctx.moveTo(576,74);
+    ctx.lineTo(556,128);
+    ctx.lineTo(527,123);
+    ctx.fill();
+    // Ice 5
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.moveTo(576,74);
+    ctx.lineTo(616,114);
+    ctx.lineTo(616,140);
+    ctx.lineTo(556,140);
+    ctx.lineTo(556,128);
+    ctx.fill();
 
     // Mountain 1
     ctx.fillStyle = colorNavyLight;
