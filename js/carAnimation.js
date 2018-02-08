@@ -64,7 +64,6 @@ function sky(sunPosition) {
     var transparency;
 
     var timeline = sunPosition % (2*Math.PI);
-
     if ((timeline > 0) && (timeline < Math.PI/4)) {
         var temperature = Math.round(((60000/Math.PI)*timeline))/100;
         if (temperature <= 66) {
@@ -72,7 +71,7 @@ function sky(sunPosition) {
             green = Math.round(2.227*temperature) + 108;
             blue = Math.round(3.86*temperature);
         } else {
-            red = Math.round(-0.5*temperature) + 255;
+            red = Math.round(-0.89*temperature) + 314;
             green = Math.round(-0.6*temperature) + 294;
             blue = 255;
         }
@@ -81,15 +80,15 @@ function sky(sunPosition) {
         green = 205;
         blue = 255;
     } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
-        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        var temperature = Math.round(((-600/Math.PI)*((3*Math.PI/4)-timeline)));
         if (temperature <= 66) {
-            red = 255;
-            green = Math.round(2.227*temperature) + 108;
-            blue = Math.round(3.86*temperature);
-        } else {
-            red = Math.round(-0.5*temperature) + 255;
-            green = Math.round(-0.6*temperature) + 294;
+            red = Math.round(0.89*temperature) + 180;
+            green = Math.round(0.6*temperature) + 205;
             blue = 255;
+        } else {
+            red = 255;
+            green = Math.round(-2.227*temperature) + 402;
+            blue = Math.round(-3.86*temperature) + 510;
         }
     } else if ((timeline > Math.PI) && (timeline < 2*Math.PI)) {
         red = 0;
