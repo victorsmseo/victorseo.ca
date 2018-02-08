@@ -63,6 +63,7 @@ function drawIce() {
     ctx.fill();
 }
 function drawMountain() {
+    ctx.save();
     // Mountain 1
     ctx.fillStyle = colorNavyLight;
     ctx.beginPath();
@@ -97,8 +98,9 @@ function drawMountain() {
     ctx.fill();
     // Mountain 3
     ctx.fillStyle = colorNavy;
-    ctx.beginPath(353, 89);
-    ctx.moveTo(347, 102);
+    ctx.beginPath();
+    ctx.moveTo(353, 89);
+    ctx.lineTo(347, 102);
     ctx.lineTo(357, 90);
     ctx.lineTo(356, 104);
     ctx.lineTo(350, 130);
@@ -176,6 +178,7 @@ function drawMountain() {
     ctx.lineTo(566, 122);
     ctx.lineTo(566, 110);
     ctx.fill();
+    ctx.restore();
 }
 function drawWater() {
     ctx.fillStyle = colorWater;
