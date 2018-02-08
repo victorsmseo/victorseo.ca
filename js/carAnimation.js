@@ -4,6 +4,7 @@ var ctx;
 var lanePosition = 0;
 var carPosition = 0;
 var wheelPosition = 0;
+var sunPosition = 0;
 
 window.onload = init;
 
@@ -17,10 +18,13 @@ function startAnimation() {
 }
 function animationLoop(timestamp) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawSun();
-    // drawBackground();
+    sky(sunPosition);
+    sun(sunPosition);
+    drawBackground();
     drawAsphalt(lanePosition);
     car(carPosition);
+    // shade(sunPosition);
+    sunPosition += 0.01;
     lanePosition += 30;
     lanePosition %= canvas.width / 2;
     carPosition += 1;
@@ -46,6 +50,106 @@ function car(carPosition) {
     rotateTireLeft(wheelPosition);
     rotateTireRight(wheelPosition);
 }
+function sun(sunPosition) {
+    ctx.save();
+    ctx.translate(305,270);
+    ctx.translate(-320*Math.cos(sunPosition),-320*Math.sin(sunPosition));
+    drawSun();
+    ctx.restore();
+}
+function sky(sunPosition) {
+    var red;
+    var green;
+    var blue;
+    var transparency;
+
+    var timeline = sunPosition % (2*Math.PI);
+
+    if ((timeline > 0) && (timeline < Math.PI/4)) {
+        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        if (temperature <= 66) {
+            red = 255;
+            green = Math.round(2.227*temperature) + 108;
+            blue = Math.round(3.86*temperature);
+        } else {
+            red = Math.round(-0.5*temperature) + 255;
+            green = Math.round(-0.6*temperature) + 294;
+            blue = 255;
+        }
+    } else if ((timeline > Math.PI/4) && (timeline < 3*Math.PI/4)) {
+        red = 181;
+        green = 205;
+        blue = 255;
+    } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
+        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        if (temperature <= 66) {
+            red = 255;
+            green = Math.round(2.227*temperature) + 108;
+            blue = Math.round(3.86*temperature);
+        } else {
+            red = Math.round(-0.5*temperature) + 255;
+            green = Math.round(-0.6*temperature) + 294;
+            blue = 255;
+        }
+    } else if ((timeline > Math.PI) && (timeline < 2*Math.PI)) {
+        red = 0;
+        green = 0;
+        blue = 20;
+    } else {
+        red = 0;
+        green = 0;
+        blue = 200;
+    }
+    transparency = 1;
+    ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
+    ctx.fillRect(0,0,canvas.width, canvas.height);
+}
+function shade(sunPosition) {
+    var timeline = sunPosition % (2*Math.PI);
+    if ((timeline > 0) && (timeline < Math.PI/4)) {
+        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        if (temperature <= 40.0) {
+            red = 255;
+            green = Math.round(2.227*temperature) + 108;
+            blue = Math.round(3.86*temperature);
+            transparency = 0.3;
+        } else {
+            red = Math.round(-0.5*temperature) + 255;
+            green = Math.round(-0.6*temperature) + 294;
+            blue = 255;
+            transparency = 0;
+        }
+    } else if ((timeline > Math.PI/4) && (timeline < 3*Math.PI/4)) {
+        red = 181;
+        green = 205;
+        blue = 255;
+        transparency = 0;
+    } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
+        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        if (temperature <= 66) {
+            red = 255;
+            green = Math.round(2.227*temperature) + 108;
+            blue = Math.round(3.86*temperature);
+        } else {
+            red = Math.round(-0.5*temperature) + 255;
+            green = Math.round(-0.6*temperature) + 294;
+            blue = 255;
+        }
+        transparency = 0;
+    } else if ((timeline > Math.PI) && (timeline < 2*Math.PI)) {
+        red = 0;
+        green = 0;
+        blue = 20;
+        transparency = 0.7;
+    } else {
+        red = 0;
+        green = 0;
+        blue = 200;
+        transparency = 0.5;
+    }
+    ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
+    ctx.fillRect(0,0,canvas.width, canvas.height);
+}
 function drawAsphalt(x) {
     const colorYellow = "#EEC830";
     const colorAsphalt = "#373737";
@@ -55,69 +159,4 @@ function drawAsphalt(x) {
     ctx.fillRect(x - canvas.width / 2, 460, canvas.width / 4, 8);
     ctx.fillRect(x, 460, canvas.width / 4, 8);
     ctx.fillRect(x + canvas.width / 2, 460, canvas.width / 4, 8);
-}
-function drawSun() {
-    const colorSun = "#F7D303";
-    const colorSunLight = "#F5DE4F";
-    ctx.save();
-    ctx.scale(0.25,0.25);
-    ctx.beginPath();
-    ctx.fillStyle = colorSunLight;
-    ctx.moveTo(464,0);
-    ctx.lineTo(506,197);
-    ctx.lineTo(561,105);
-    ctx.lineTo(562,212);
-    ctx.lineTo(697,62);
-    ctx.lineTo(634,253);
-    ctx.lineTo(727,201);
-    ctx.lineTo(677,295);
-    ctx.lineTo(864,232);
-    ctx.lineTo(716,366);
-
-    ctx.lineTo(822,368);
-    ctx.lineTo(731,424);
-    ctx.lineTo(927,464);
-    ctx.lineTo(731,505);
-    ctx.lineTo(822,561);
-    ctx.lineTo(716,561);
-    ctx.lineTo(864,698);
-    ctx.lineTo(677,633);
-    ctx.lineTo(727,727);
-    ctx.lineTo(634,675);
-    ctx.lineTo(697,866);
-    ctx.lineTo(562,715);
-    ctx.lineTo(561,824);
-    ctx.lineTo(506,731);
-    ctx.lineTo(462,931);
-    ctx.lineTo(424,731);
-    ctx.lineTo(369,824);
-    ctx.lineTo(363,715);
-    ctx.lineTo(232,866);
-    ctx.lineTo(296,675);
-    ctx.lineTo(202,727);
-    ctx.lineTo(253,633);
-    ctx.lineTo(62,698);
-    ctx.lineTo(213,561);
-    ctx.lineTo(104,561);
-    ctx.lineTo(197,505);
-    ctx.lineTo(0,464);
-    ctx.lineTo(197,424);
-    ctx.lineTo(104,368);
-    ctx.lineTo(213,366);
-    ctx.lineTo(62,232);
-    ctx.lineTo(253,295);
-    ctx.lineTo(202,201);
-    ctx.lineTo(296,253);
-    ctx.lineTo(232,62);
-    ctx.lineTo(363,212);
-    ctx.lineTo(369,105);
-    ctx.lineTo(424,197);
-
-
-    ctx.fill();
-    ctx.beginPath();
-    ctx.fillStyle = colorSun;
-    ctx.arc(462,462,256,0,2*Math.PI);
-    ctx.fill();
-    ctx.restore();
 }

@@ -1,0 +1,65 @@
+const colorSun = "#F7D303";
+const colorSunLight = "#F5DE4F";
+
+function drawSun() {
+    ctx.save();
+    ctx.scale(0.15,0.15);
+    
+    ctx.beginPath();
+    ctx.fillStyle = colorSunLight;
+    ctx.moveTo(464,0);
+    ctx.lineTo(506,197);
+    ctx.lineTo(561,105);
+    ctx.lineTo(562,212);
+    ctx.lineTo(697,62);
+    ctx.lineTo(634,253);
+    ctx.lineTo(727,201);
+    ctx.lineTo(677,295);
+    ctx.lineTo(864,232);
+    ctx.lineTo(716,366);
+    ctx.lineTo(822,368);
+    ctx.lineTo(731,424);
+    ctx.lineTo(927,464);
+    ctx.lineTo(731,505);
+    ctx.lineTo(822,561);
+    ctx.lineTo(716,561);
+    ctx.lineTo(864,698);
+    ctx.lineTo(677,633);
+    ctx.lineTo(727,727);
+    ctx.lineTo(634,675);
+    ctx.lineTo(697,866);
+    ctx.lineTo(562,715);
+    ctx.lineTo(561,824);
+    ctx.lineTo(506,731);
+    ctx.lineTo(462,931);
+    ctx.lineTo(424,731);
+    ctx.lineTo(369,824);
+    ctx.lineTo(363,715);
+    ctx.lineTo(232,866);
+    ctx.lineTo(296,675);
+    ctx.lineTo(202,727);
+    ctx.lineTo(253,633);
+    ctx.lineTo(62,698);
+    ctx.lineTo(213,561);
+    ctx.lineTo(104,561);
+    ctx.lineTo(197,505);
+    ctx.lineTo(0,464);
+    ctx.lineTo(197,424);
+    ctx.lineTo(104,368);
+    ctx.lineTo(213,366);
+    ctx.lineTo(62,232);
+    ctx.lineTo(253,295);
+    ctx.lineTo(202,201);
+    ctx.lineTo(296,253);
+    ctx.lineTo(232,62);
+    ctx.lineTo(363,212);
+    ctx.lineTo(369,105);
+    ctx.lineTo(424,197);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.fillStyle = colorSun;
+    ctx.arc(462,462,256,0,2*Math.PI);
+    ctx.fill();
+    ctx.restore();
+}
