@@ -5,6 +5,7 @@ var lanePosition = 0;
 var carPosition = 0;
 var wheelPosition = 0;
 var sunPosition = 0;
+var timeline;
 
 window.onload = init;
 
@@ -18,18 +19,24 @@ function startAnimation() {
 }
 function animationLoop(timestamp) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    sky(sunPosition);
+    sky(timeline);
     sun(sunPosition);
     drawBackground();
     drawAsphalt(lanePosition);
     car(carPosition);
-    // shade(sunPosition);
+    shade(timeline);
+
+    timeline = sunPosition % (2*Math.PI);
     sunPosition += 0.01;
+
     lanePosition += 30;
     lanePosition %= canvas.width / 2;
+
     carPosition += 1;
+
     wheelPosition += 1;
     wheelPosition %= 20;
+
     requestId = requestAnimationFrame(animationLoop);
 }
 function car(carPosition) {
@@ -57,15 +64,15 @@ function sun(sunPosition) {
     drawSun();
     ctx.restore();
 }
-function sky(sunPosition) {
+function sky(timeline) {
     var red;
     var green;
     var blue;
     var transparency;
-
-    var timeline = sunPosition % (2*Math.PI);
+    
     if ((timeline > 0) && (timeline < Math.PI/4)) {
-        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
+        // Sunrise
+        var temperature = Math.round(((600/Math.PI)*timeline));
         if (temperature <= 66) {
             red = 255;
             green = Math.round(2.227*temperature) + 108;
@@ -76,10 +83,12 @@ function sky(sunPosition) {
             blue = 255;
         }
     } else if ((timeline > Math.PI/4) && (timeline < 3*Math.PI/4)) {
+        // Day
         red = 181;
         green = 205;
         blue = 255;
     } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
+        // Sunset
         var temperature = Math.round(((-600/Math.PI)*((3*Math.PI/4)-timeline)));
         if (temperature <= 66) {
             red = Math.round(0.89*temperature) + 180;
@@ -90,24 +99,21 @@ function sky(sunPosition) {
             green = Math.round(-2.227*temperature) + 402;
             blue = Math.round(-3.86*temperature) + 510;
         }
-    } else if ((timeline > Math.PI) && (timeline < 2*Math.PI)) {
+    } else {
+        // Night
         red = 0;
         green = 0;
         blue = 20;
-    } else {
-        red = 0;
-        green = 0;
-        blue = 200;
-    }
+    } 
     transparency = 1;
     ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
     ctx.fillRect(0,0,canvas.width, canvas.height);
 }
-function shade(sunPosition) {
-    var timeline = sunPosition % (2*Math.PI);
+function shade(timeline) {
     if ((timeline > 0) && (timeline < Math.PI/4)) {
-        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
-        if (temperature <= 40.0) {
+        // Sunrise
+        var temperature = Math.round(((600/Math.PI)*timeline));
+        if (temperature <= 40) {
             red = 255;
             green = Math.round(2.227*temperature) + 108;
             blue = Math.round(3.86*temperature);
@@ -119,32 +125,28 @@ function shade(sunPosition) {
             transparency = 0;
         }
     } else if ((timeline > Math.PI/4) && (timeline < 3*Math.PI/4)) {
-        red = 181;
-        green = 205;
-        blue = 255;
+        // Day
         transparency = 0;
     } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
-        var temperature = Math.round(((60000/Math.PI)*timeline))/100;
-        if (temperature <= 66) {
-            red = 255;
-            green = Math.round(2.227*temperature) + 108;
-            blue = Math.round(3.86*temperature);
-        } else {
-            red = Math.round(-0.5*temperature) + 255;
-            green = Math.round(-0.6*temperature) + 294;
+        // Sunset
+        var temperature = Math.round(((-600/Math.PI)*((3*Math.PI/4)-timeline)));
+        if (temperature <= 85) {
+            red = Math.round(0.89*temperature) + 180;
+            green = Math.round(0.6*temperature) + 205;
             blue = 255;
+            transparency = 0;
+        } else {
+            red = 255;
+            green = Math.round(-2.227*temperature) + 402;
+            blue = Math.round(-3.86*temperature) + 510;
+            transparency = 0.3;
         }
-        transparency = 0;
-    } else if ((timeline > Math.PI) && (timeline < 2*Math.PI)) {
+    } else {
+        // Night
         red = 0;
         green = 0;
         blue = 20;
         transparency = 0.7;
-    } else {
-        red = 0;
-        green = 0;
-        blue = 200;
-        transparency = 0.5;
     }
     ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
     ctx.fillRect(0,0,canvas.width, canvas.height);
