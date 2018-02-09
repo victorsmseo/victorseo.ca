@@ -25,6 +25,7 @@ function animationLoop(timestamp) {
     drawAsphalt(lanePosition);
     car(carPosition);
     shade(timeline);
+    light(timeline);
 
     timeline = sunPosition % (2*Math.PI);
     sunPosition += 0.01;
@@ -101,9 +102,9 @@ function sky(timeline) {
         }
     } else {
         // Night
-        red = 0;
-        green = 0;
-        blue = 20;
+        red = 19;
+        green = 24;
+        blue = 98;
     } 
     transparency = 1;
     ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
@@ -117,7 +118,7 @@ function shade(timeline) {
             red = 255;
             green = Math.round(2.227*temperature) + 108;
             blue = Math.round(3.86*temperature);
-            transparency = 0.3;
+            transparency = 0.2;
         } else {
             red = Math.round(-0.5*temperature) + 255;
             green = Math.round(-0.6*temperature) + 294;
@@ -139,8 +140,33 @@ function shade(timeline) {
             red = 255;
             green = Math.round(-2.227*temperature) + 402;
             blue = Math.round(-3.86*temperature) + 510;
-            transparency = 0.3;
+            transparency = 0.2;
         }
+    } else {
+        // Night
+        red = 19;
+        green = 24;
+        blue = 98;
+        transparency = 0.2;
+    }
+    ctx.fillStyle = "rgba(" + red.toString() + "," + green.toString() + "," + blue.toString() + "," + transparency.toString() + ")";
+    ctx.fillRect(0,0,canvas.width, canvas.height);
+}
+function light(timeline) {
+    red = 19;
+    green = 24;
+    blue = 98;
+    if ((timeline > 0) && (timeline < Math.PI/4)) {
+        // Sunrise
+        var temperature = Math.round(((600/Math.PI)*timeline));
+        transparency = (7*temperature/-1500)+0.7;
+    } else if ((timeline > Math.PI/4) && (timeline < 3*Math.PI/4)) {
+        // Day
+        transparency = 0;
+    } else if ((timeline > 3*Math.PI/4) && (timeline < Math.PI)) {
+        // Sunset
+        var temperature = Math.round(((-600/Math.PI)*((3*Math.PI/4)-timeline)));
+        transparency = (7*temperature/1500);
     } else {
         // Night
         red = 0;
